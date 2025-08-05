@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-md navbar-dark zendu-navbar">
+  <a class="navbar-brand fw-bold" href="#">ZenduForms</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#zenduTopNav"
+    aria-controls="zenduTopNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse flex-grow-1" id="zenduTopNav">
+    <div
+      class="w-100 d-flex flex-column flex-md-row align-items-md-center justify-content-between"
+    >
+      <!-- Menu: centered horizontally, stacked vertically in collapse -->
+      <ul class="navbar-nav mx-auto gap-md-2">
+        <li class="nav-item" *ngFor="let item of navItems">
+          <a
+            class="nav-link d-flex align-items-center"
+            [ngClass]="{ 'active zendu-nav-active': item.isActive }"
+            [routerLink]="item.route"
+          >
+            <i class="bi me-2" [ngClass]="item.icon"></i>
+            {{ item.label }}
+          </a>
+        </li>
+      </ul>
+      <!-- Actions: right on desktop, below on mobile -->
+      <div
+        class="actions-mobile-responsive d-flex flex-row gap-2 mt-3 mt-md-0 ms-0 ms-md-3 justify-content-center justify-content-md-end"
+      >
+        <button class="btn btn-icon" type="button" aria-label="Notifications">
+          <i class="bi bi-bell fs-5"></i>
+        </button>
+        <button class="btn btn-icon" type="button" aria-label="Profile">
+          <i class="bi bi-box-arrow-right fs-5"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

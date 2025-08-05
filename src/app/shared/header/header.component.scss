@@ -1,0 +1,150 @@
+.zendu-navbar {
+  background: #2188d9 !important;
+  min-height: 56px;
+  box-shadow: 0 1px 4px 0 rgba(44, 82, 130, 0.1);
+  font-family: "Inter", "Roboto", sans-serif;
+  z-index: 1002;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.zendu-navbar .navbar-brand {
+  color: #fff;
+  font-size: 1.28rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.zendu-navbar .nav-link {
+  color: #fff;
+  opacity: 0.92;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background 0.17s, color 0.17s;
+  padding: 0.45rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.32rem;
+}
+
+.zendu-navbar .nav-link:hover,
+.zendu-navbar .nav-link:focus {
+  color: #e9f5ff;
+  background: rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+}
+
+.zendu-navbar .zendu-nav-active,
+.zendu-navbar .nav-link.active {
+  color: #fff !important; /* Blue for active tab */
+  background: #1673bb !important; /* White bg for active tab */
+  font-weight: 600;
+}
+
+.zendu-navbar .btn-icon {
+  background: transparent;
+  color: #fff;
+  border: none;
+  padding: 0.28rem 0.28rem;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.zendu-navbar .btn-icon:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 991.98px) {
+  .zendu-navbar .navbar-brand {
+    font-size: 1.07rem;
+    margin-right: 0.9rem;
+  }
+  .zendu-navbar .nav-link {
+    font-size: 15px;
+    padding: 0.38rem 0.7rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .zendu-navbar .navbar-brand {
+    margin-bottom: 0.5rem;
+  }
+  .zendu-navbar .navbar-collapse {
+    background: #2188d9;
+    border-radius: 8px;
+    margin-top: 6px;
+    box-shadow: 0 6px 18px 0 rgba(44, 82, 130, 0.06);
+    padding: 0.6rem 0.3rem;
+  }
+  .zendu-navbar .nav-link {
+    padding: 0.4rem 1rem;
+    width: 100%;
+    margin-bottom: 0.25rem;
+    border-radius: 4px;
+  }
+  .zendu-navbar .d-flex.gap-2 {
+    margin-top: 0.7rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+// #1673BB
+
+.zendu-navbar .nav-link,
+.zendu-navbar .d-flex.gap-2 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.zendu-navbar .navbar-toggler {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  height: 44px;
+  /* NO display: flex here! */
+  align-items: center;
+}
+@media (max-width: 991.98px) {
+  .zendu-navbar .navbar-toggler {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.zendu-navbar {
+  background: #2188d9 !important;
+  height: 56px;
+  min-height: 56px;
+  padding: 0 24px !important; // Adjust for horizontal padding (16–32px is typical)
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: 0 1px 4px 0 rgba(44, 82, 130, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .zendu-navbar {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+.zendu-navbar .navbar-nav {
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.zendu-navbar .navbar-nav {
+  min-width: 0;
+}
+.zendu-navbar .navbar-nav li,
+.zendu-navbar .navbar-nav .nav-link {
+  white-space: nowrap;
+}

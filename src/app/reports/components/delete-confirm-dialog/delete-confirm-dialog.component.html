@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Delete Report</h2>
+<mat-dialog-content>
+  <p>
+    Are you sure you want to delete "<strong>{{ data.name }}</strong
+    >"?
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="warn" (click)="onConfirm()">Delete</button>
+</mat-dialog-actions>

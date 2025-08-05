@@ -1,0 +1,215 @@
+.report-name-col {
+  min-width: 180px;
+  max-width: 260px;
+  flex-basis: 220px;
+}
+.report-name-text {
+  max-width: 200px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.report-info-cols {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+}
+.report-info-col {
+  min-width: 140px;
+  max-width: 200px;
+  flex-basis: 180px;
+  flex-shrink: 0;
+}
+.report-info-text {
+  max-width: 170px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.report-row {
+  transition: border 0.2s ease, background 0.2s ease;
+  font-size: 14px;
+}
+
+.report-row:hover {
+  background-color: #f8f9fa;
+}
+
+.selected-row {
+  border: 2.5px solid #1a56cc !important;
+  background-color: #e3edfa;
+}
+
+.custom-select-style {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding-right: 1.5rem; // space for icon
+  outline: none;
+}
+
+.custom-select-style:focus {
+  box-shadow: none;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #333;
+  font-size: 12px;
+}
+
+.report-actions {
+  min-width: 64px;
+}
+
+.page-item {
+  padding: 0px 6px;
+}
+
+.page-item a {
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-zendu-blue {
+  background-color: #2188d9 !important;
+  border-color: #2188d9 !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+.btn-zendu-blue:hover,
+.btn-zendu-blue:focus {
+  background-color: #1769b2 !important; /* a slightly darker blue for hover */
+  border-color: #1769b2 !important;
+  color: #fff !important;
+}
+
+.pagination-zendu-blue .page-item:not(.disabled) .page-link {
+  color: #000;
+  border-color: #000;
+  background: transparent;
+}
+
+.pagination-zendu-blue .page-item.active .page-link {
+  color: #2188d9 !important;
+  border-color: #2188d9 !important;
+  background: transparent !important;
+  font-weight: 600;
+}
+
+/* Hover/focus for normal (non-disabled, non-active) page links */
+.pagination-zendu-blue .page-link:hover,
+.pagination-zendu-blue .page-link:focus {
+  color: #2188d9;
+  border-color: #2188d9;
+  background: #f2f8fc;
+}
+
+// #2188D9
+
+// Responsive styles for mobile and tablet
+@media (max-width: 767.98px) {
+  .report-row {
+    font-size: 13px;
+    padding: 0.75rem 0.25rem;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+  }
+  .report-name-col {
+    min-width: 100px;
+    max-width: 100%;
+    flex-basis: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .report-info-cols {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .report-info-col {
+    min-width: 100px;
+    max-width: 100%;
+    flex-basis: 100%;
+    margin-bottom: 0.25rem;
+  }
+  .report-info-text,
+  .report-name-text {
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .report-actions {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .report-actions button {
+    font-size: 1.5rem;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .report-row {
+    font-size: 13.5px;
+    padding: 1.25rem 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: visible;
+  }
+  .report-info-cols {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .report-info-col {
+    min-width: 90px;
+    max-width: 140px;
+    flex-basis: 120px;
+    word-break: break-word;
+  }
+  .report-name-col {
+    min-width: 120px;
+    max-width: 180px;
+    flex-basis: 150px;
+    word-break: break-word;
+  }
+  .report-info-text,
+  .report-name-text {
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .report-actions {
+    min-width: 64px;
+    max-width: 80px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .report-actions button {
+    font-size: 1.25rem;
+    min-width: 38px;
+    min-height: 38px;
+  }
+}

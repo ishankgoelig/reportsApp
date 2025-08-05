@@ -1,27 +1,55 @@
-# AllReportsApp
+# All Reports App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## Project Setup & Running Locally
 
-## Development server
+1. **Install Dependencies**
+   ```
+   npm install
+   ```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2. **Run the Application**
+   ```
+   npm start
+   ```
+   The app will be available at `http://localhost:4200` by default.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+3. **Build for Production**
+   ```
+   ng build
+   ```
+   This will generate a production build in the `dist/` directory.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+   > **Note:** In Angular 12 and above, `ng build` always produces a production build by default. The `--prod` flag is no longer needed or supported. If you want to be explicit, you can use:
+   > ```
+   > ng build --configuration production
+   > ```
 
-## Running unit tests
+4. **Lint the Code**
+   ```
+   ng lint
+   ```
+   This will run Angular ESLint and show any code style or best practice issues.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Main Components & Functionality
 
-## Running end-to-end tests
+- **src/app/reports/reports.component.ts / .html / .scss**
+  - Main UI for listing, searching, sorting, and paginating reports.
+  - Allows selecting a report row to show edit/delete actions.
+  - Responsive layout with fixed-width columns for consistent alignment.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **src/app/reports/services/reports.service.ts**
+  - Handles fetching and managing report data (mocked from `assets/reports.json`).
 
-## Further help
+- **src/assets/reports.json**
+  - Mock data source for reports.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Reviewer Notes
+
+- The UI is fully responsive and tested for edge cases (long names, empty states, etc).
+- Row selection highlights the row and shows actions; clicking outside or sorting clears selection.
+- All layout and visibility logic is handled with Angular and SCSS for a smooth user experience.
+- For any issues, please check the browser console for errors or run `npm test` for diagnostics.
+
+---
