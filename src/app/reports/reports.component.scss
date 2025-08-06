@@ -52,7 +52,7 @@
   border: none;
   font-size: 14px;
   font-weight: 500;
-  padding-right: 1.5rem; // space for icon
+  padding-right: 1.5rem;
   outline: none;
 }
 
@@ -91,7 +91,7 @@
 }
 .btn-zendu-blue:hover,
 .btn-zendu-blue:focus {
-  background-color: #1769b2 !important; /* a slightly darker blue for hover */
+  background-color: #1769b2 !important;
   border-color: #1769b2 !important;
   color: #fff !important;
 }
@@ -109,7 +109,6 @@
   font-weight: 600;
 }
 
-/* Hover/focus for normal (non-disabled, non-active) page links */
 .pagination-zendu-blue .page-link:hover,
 .pagination-zendu-blue .page-link:focus {
   color: #2188d9;
@@ -117,9 +116,6 @@
   background: #f2f8fc;
 }
 
-// #2188D9
-
-// Responsive styles for mobile and tablet
 @media (max-width: 767.98px) {
   .report-row {
     font-size: 13px;

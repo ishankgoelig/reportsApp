@@ -1,0 +1,39 @@
+<ul class="pagination pagination-sm mb-0 pagination-zendu-blue">
+  <li class="page-item" [class.disabled]="currentPage === 1">
+    <a
+      class="page-link"
+      (click)="goToPage(currentPage - 1)"
+      tabindex="0"
+      role="button"
+      >&laquo;</a
+    >
+  </li>
+  <li
+    *ngFor="let page of smartPages"
+    class="page-item"
+    [class.active]="page === currentPage"
+    [class.disabled]="page === '...'"
+  >
+    <a
+      *ngIf="isNumber(page); else ellipsis"
+      class="page-link"
+      (click)="goToPage(page)"
+      tabindex="0"
+      role="button"
+    >
+      {{ page }}
+    </a>
+    <ng-template #ellipsis>
+      <span class="page-link">...</span>
+    </ng-template>
+  </li>
+  <li class="page-item" [class.disabled]="currentPage === totalPages">
+    <a
+      class="page-link"
+      (click)="goToPage(currentPage + 1)"
+      tabindex="0"
+      role="button"
+      >&raquo;</a
+    >
+  </li>
+</ul>

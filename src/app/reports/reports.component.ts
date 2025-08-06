@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ReportsService, Report } from '../services/reports.service';
+import { ReportsService, Report } from '../shared/services/reports.service';
 import { DeleteConfirmDialogComponent } from './components/delete-confirm-dialog/delete-confirm-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
@@ -56,12 +56,18 @@ export class ReportsComponent implements OnInit, OnDestroy {
     });
   }
 
-  applySort(): void {
+  applySort(keepPage = false): void {
     const filtered = this.filterReports(this.reports);
     const sorted = this.sortReports(filtered);
     this.visibleReports = sorted;
     this.totalPages = Math.ceil(sorted.length / this.pageSize) || 1;
-    this.currentPage = 1;
+
+    if (!keepPage) {
+      this.currentPage = 1;
+    } else if (this.currentPage > this.totalPages) {
+      this.currentPage = this.totalPages;
+    }
+
     this.setPagedData();
   }
 
@@ -70,7 +76,6 @@ export class ReportsComponent implements OnInit, OnDestroy {
     const end = start + this.pageSize;
     this.pagedData = this.visibleReports.slice(start, end);
   }
-
 
   goToPage(page: number): void {
     if (page >= 1 && page <= this.totalPages) {
@@ -94,7 +99,17 @@ export class ReportsComponent implements OnInit, OnDestroy {
     try {
       const initialLength = this.reports.length;
       this.reports = this.reports.filter(r => r.id !== id);
-      this.applySort();
+
+      const filtered = this.filterReports(this.reports);
+      const sorted = this.sortReports(filtered);
+
+      const firstItemIdx = (this.currentPage - 1) * this.pageSize;
+      if (firstItemIdx >= sorted.length && this.currentPage > 1) {
+        this.currentPage--;
+      }
+
+      this.applySort(true);
+
       if (this.reports.length < initialLength) {
         this.toastr.success('Report deleted successfully!', 'Success');
       } else {
@@ -104,6 +119,7 @@ export class ReportsComponent implements OnInit, OnDestroy {
       this.toastr.error('An error occurred while deleting the report.', 'Error');
     }
   }
+
 
   openDeleteDialog(report: Report): void {
     const dialogRef = this.dialog.open(DeleteConfirmDialogComponent, {

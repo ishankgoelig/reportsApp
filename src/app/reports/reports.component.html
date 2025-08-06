@@ -27,7 +27,6 @@
           <option value="Newest">Newest</option>
           <option value="Oldest">Oldest</option>
         </select>
-        <i class="bi bi-caret-down-fill dropdown-arrow"></i>
       </div>
     </div>
   </div>
@@ -115,48 +114,17 @@
   </div>
 
   <!-- Pagination -->
-  <nav class="d-flex justify-content-between align-items-center mt-5">
+  <div class="d-flex justify-content-between align-items-center mt-5">
     <span>
       {{ pageRangeText }}
     </span>
-    <ul class="pagination pagination-sm mb-0 pagination-zendu-blue">
-      <li class="page-item" [class.disabled]="currentPage === 1">
-        <a
-          class="page-link"
-          (click)="goToPage(currentPage - 1)"
-          (keyup.enter)="goToPage(currentPage - 1)"
-          tabindex="0"
-          role="button"
-          aria-label="Previous page"
-          >&laquo;</a
-        >
-      </li>
-      <li
-        class="page-item"
-        *ngFor="let page of pages"
-        [class.active]="page === currentPage"
+    <div class="pagination pagination-sm mb-0 pagination-zendu-blue">
+      <app-pagination
+        [currentPage]="currentPage"
+        [totalPages]="totalPages"
+        (pageChange)="goToPage($event)"
       >
-        <a
-          class="page-link"
-          (click)="goToPage(page)"
-          (keyup.enter)="goToPage(page)"
-          tabindex="0"
-          role="button"
-          [attr.aria-label]="'Go to page ' + page"
-          >{{ page }}</a
-        >
-      </li>
-      <li class="page-item" [class.disabled]="currentPage === totalPages">
-        <a
-          class="page-link"
-          (click)="goToPage(currentPage + 1)"
-          (keyup.enter)="goToPage(currentPage + 1)"
-          tabindex="0"
-          role="button"
-          aria-label="Next page"
-          >&raquo;</a
-        >
-      </li>
-    </ul>
-  </nav>
+      </app-pagination>
+    </div>
+  </div>
 </div>

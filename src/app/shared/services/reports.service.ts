@@ -21,7 +21,6 @@ export class ReportsService {
   getReports(): Observable<Report[]> {
     return this.http.get<Report[]>('assets/reports.json').pipe(
       catchError(() => {
-        // Optionally log error to a remote server here
         return throwError(() => new Error('Failed to load reports. Please try again later.'));
       })
     );

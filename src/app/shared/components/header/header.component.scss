@@ -37,8 +37,8 @@
 
 .zendu-navbar .zendu-nav-active,
 .zendu-navbar .nav-link.active {
-  color: #fff !important; /* Blue for active tab */
-  background: #1673bb !important; /* White bg for active tab */
+  color: #fff !important;
+  background: #1673bb !important;
   font-weight: 600;
 }
 
@@ -89,8 +89,6 @@
   }
 }
 
-// #1673BB
-
 .zendu-navbar .nav-link,
 .zendu-navbar .d-flex.gap-2 {
   padding-top: 0 !important;
@@ -108,7 +106,6 @@
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   height: 44px;
-  /* NO display: flex here! */
   align-items: center;
 }
 @media (max-width: 991.98px) {
@@ -122,7 +119,7 @@
   background: #2188d9 !important;
   height: 56px;
   min-height: 56px;
-  padding: 0 24px !important; // Adjust for horizontal padding (16–32px is typical)
+  padding: 0 24px !important;
   margin: 0 !important;
   border: none !important;
   box-shadow: 0 1px 4px 0 rgba(44, 82, 130, 0.1);
