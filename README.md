@@ -12,8 +12,7 @@
    npm start
    ```
    The app will be available at `http://localhost:4200` by default.
-
-
+   
 
 3. **Build for Production**
    ```
@@ -31,6 +30,12 @@
    ng lint
    ```
    This will run Angular ESLint and show any code style or best practice issues.
+
+5. **Test the Code**
+   ```
+   ng test
+   ```
+   This will run Angular Test and show any all the test cases. I have written total of 38 test cases and all passed.
 
 ## Main Components & Functionality
 
