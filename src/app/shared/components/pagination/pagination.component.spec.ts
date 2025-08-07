@@ -51,13 +51,12 @@ describe('PaginationComponent', () => {
     spyOn(component.pageChange, 'emit');
     component.totalPages = 3;
     component.currentPage = 2;
-    component.goToPage(0);   // below range
-    component.goToPage(4);   // above range
+    component.goToPage(0);
+    component.goToPage(4);
     expect(component.pageChange.emit).not.toHaveBeenCalled();
   });
 
   it('should generate correct smartPages for consecutive range', () => {
-    // E.g. current page 3 of 5: expect [1, 1, 2, 3, 4, 5] -> [1,2,3,4,5]
     component.currentPage = 3;
     component.totalPages = 5;
     fixture.detectChanges();
@@ -84,8 +83,4 @@ describe('PaginationComponent', () => {
     component.goToPage(1);
     expect(component.pageChange.emit).not.toHaveBeenCalled();
   });
-
-  // Add template-based tests if you want to check rendering and click events
-  // Assuming your template calls goToPage(page) in (click)
-  // For that, you would need to provide a mock template or copy its code
 });

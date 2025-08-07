@@ -6,7 +6,6 @@ import { ToastrService } from 'ngx-toastr';
 import { of, Subject, Subscription } from 'rxjs';
 import { SharedModule } from '../shared/shared.module';
 
-// Mock Data
 const mockReports: Report[] = [
   { id: 1, reportName: 'Alpha', owner: 'Alice', formName: 'Form1', createdDate: '2024-08-01', modifiedDate: '2024-08-02' },
   { id: 2, reportName: 'Beta', owner: 'Bob', formName: 'Form2', createdDate: '2024-09-01', modifiedDate: '2024-09-02' },
@@ -104,7 +103,7 @@ describe('ReportsComponent', () => {
     expect(component.currentPage).toBe(2);
     expect(component.setPagedData).toHaveBeenCalled();
     component.goToPage(0);
-    expect(component.currentPage).toBe(2); // unchanged by invalid
+    expect(component.currentPage).toBe(2);
   });
 
   it('should delete report and show success message', () => {
